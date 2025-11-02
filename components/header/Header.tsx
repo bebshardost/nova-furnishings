@@ -9,11 +9,11 @@ import { Button } from '@/components/ui/button'
 import Logo from '@/public/assets/images/housedecor-logo.png'
 
 const navItems = [
-    { name: 'BEDROOM', path: '/bedroom' },
-    { name: 'LIVING ROOM', path: '/living-room' },
-    { name: 'KITCHEN', path: '/kitchen' },
-    { name: 'BATHROOM', path: '/bathroom' },
-    { name: 'SALE', path: '/sale' },
+  { name: 'BEDROOM', path: '/products?category=beds' },
+  { name: 'LIVING ROOM', path: '/products?category=sofas' },
+  { name: 'KITCHEN', path: '/products?category=kitchen' },
+  { name: 'BATHROOM', path: '/products?category=storage' },
+  { name: 'ALL PRODUCTS', path: '/products' },
 ]
 
 export default function Header() {
