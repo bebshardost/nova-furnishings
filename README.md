@@ -4,12 +4,12 @@
 
 A beautiful, modern furniture e-commerce store built with Next.js 15, TypeScript, and Tailwind CSS. Features a complete admin dashboard for comprehensive store management.
 
-![Nova Furnishings](https://via.placeholder.com/1200x600/8A9B69/FFFFFF?text=Nova+Furnishings)
+![Nova Furnishings](.github/screenshots/nova-furnishings-home.png)
 
 ## 🚀 Live Demo
 
-**Store Frontend:** [your-domain.com](https://your-domain.com)  
-**Admin Dashboard:** [your-domain.com/admin](https://your-domain.com/admin)
+**Store Frontend:** [nova-furnishings.vercel.app](https://nova-furnishings.vercel.app/)  
+**Admin Dashboard:** [nova-furnishings.vercel.app/admin](https://nova-furnishings.vercel.app/admin)
 
 ### Demo Credentials
 
@@ -99,7 +99,7 @@ nova-furnishings/
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/yourusername/nova-furnishings.git
+   git clone https://github.com/bebshardost/nova-furnishings.git
    cd nova-furnishings
    ```
 
@@ -427,9 +427,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Need help or have questions?
 
-- 📧 **Email**: support@novafurnishings.com
-- 🐛 **Issues**: [GitHub Issues](https://github.com/yourusername/nova-furnishings/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/yourusername/nova-furnishings/discussions)
+- 📧 **Email**: bebshardost@gmail.com
+- 🐛 **Issues**: [GitHub Issues](https://github.com/bebshardost/nova-furnishings/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/bebshardost/nova-furnishings/discussions)
 - 🌐 **Website**: [BebsharDost](https://bebshardost.com)
 
 ## 🙏 Acknowledgments
