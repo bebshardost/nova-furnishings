@@ -1,4 +1,4 @@
-import { Product } from '@/types'
+import { CartItem, Product } from '@/types'
 import Product1 from '@/public/assets/images/product-1.png'
 import Product2 from '@/public/assets/images/product-2.png'
 import Product3 from '@/public/assets/images/product-3.png'
@@ -277,4 +277,262 @@ export const getRelatedProducts = (product: Product, limit = 4) => {
   return products
     .filter(p => p.id !== product.id && p.category === product.category)
     .slice(0, limit)
+}
+
+// Add to existing mock data
+
+export interface Order {
+  id: string
+  customer: {
+    name: string
+    email: string
+    phone: string
+    address: string
+    city: string
+    district: string
+  }
+  items: CartItem[]
+  total: number
+  status: 'pending' | 'confirmed' | 'shipped' | 'delivered' | 'cancelled'
+  paymentMethod: 'cod' | 'bkash' | 'nagad'
+  paymentStatus: 'pending' | 'paid' | 'failed'
+  createdAt: string
+  updatedAt: string
+  notes?: string
+}
+
+export interface AdminUser {
+  id: string
+  username: string
+  password: string // In real app, this would be hashed
+  name: string
+  role: 'admin' | 'manager'
+}
+
+// Mock Orders
+export const orders: Order[] = [
+  {
+    id: 'ORD-001',
+    customer: {
+      name: 'Rahim Ahmed',
+      email: 'rahim@gmail.com',
+      phone: '01512345678',
+      address: '123 Green Road',
+      city: 'Dhaka',
+      district: 'dhaka'
+    },
+    items: [
+      {
+        id: '1',
+        src: Product1,
+        title: 'Modern Chair',
+        price: 49.99,
+        category: 'chairs',
+        tags: ['modern', 'living room'],
+        inStock: true,
+        rating: 4.5,
+        reviewCount: 128,
+        features: ['Ergonomic design', 'Easy assembly'],
+        materials: ['Wood', 'Fabric'],
+        quantity: 2
+      }
+    ],
+    total: 99.98,
+    status: 'confirmed',
+    paymentMethod: 'cod',
+    paymentStatus: 'pending',
+    createdAt: '2024-01-15T10:30:00Z',
+    updatedAt: '2024-01-15T10:30:00Z',
+    notes: 'Please deliver before 6 PM'
+  },
+  {
+    id: 'ORD-002',
+    customer: {
+      name: 'Fatima Begum',
+      email: 'fatima@yahoo.com',
+      phone: '01787654321',
+      address: '456 Lake View',
+      city: 'Chittagong',
+      district: 'chittagong'
+    },
+    items: [
+      {
+        id: '2',
+        src: Product2,
+        title: 'Elegant Sofa',
+        price: 199.99,
+        category: 'sofas',
+        tags: ['elegant', 'living room'],
+        inStock: true,
+        rating: 4.8,
+        reviewCount: 89,
+        features: ['3-seater', 'Removable covers'],
+        materials: ['Wood', 'Linen'],
+        quantity: 1
+      },
+      {
+        id: '4',
+        src: Product4,
+        title: 'Luxury Lamp',
+        price: 39.99,
+        category: 'lighting',
+        tags: ['luxury', 'decor'],
+        inStock: true,
+        rating: 4.6,
+        reviewCount: 203,
+        features: ['Dimmable', 'LED'],
+        materials: ['Metal', 'Glass'],
+        quantity: 1
+      }
+    ],
+    total: 239.98,
+    status: 'shipped',
+    paymentMethod: 'bkash',
+    paymentStatus: 'paid',
+    createdAt: '2024-01-14T14:20:00Z',
+    updatedAt: '2024-01-15T09:15:00Z'
+  },
+  {
+    id: 'ORD-003',
+    customer: {
+      name: 'Kamal Hossain',
+      email: 'kamal@gmail.com',
+      phone: '01911223344',
+      address: '789 Hill Road',
+      city: 'Sylhet',
+      district: 'sylhet'
+    },
+    items: [
+      {
+        id: '3',
+        src: Product3,
+        title: 'Wooden Table',
+        price: 89.99,
+        originalPrice: 119.99,
+        category: 'tables',
+        tags: ['wooden', 'dining'],
+        inStock: true,
+        rating: 4.3,
+        reviewCount: 156,
+        features: ['Extendable', 'Scratch resistant'],
+        materials: ['Solid Oak'],
+        quantity: 1
+      }
+    ],
+    total: 89.99,
+    status: 'delivered',
+    paymentMethod: 'nagad',
+    paymentStatus: 'paid',
+    createdAt: '2024-01-13T16:45:00Z',
+    updatedAt: '2024-01-14T11:30:00Z'
+  },
+  {
+    id: 'ORD-004',
+    customer: {
+      name: 'Ayesha Akter',
+      email: 'ayesha@hotmail.com',
+      phone: '01855667788',
+      address: '321 River Side',
+      city: 'Dhaka',
+      district: 'dhaka'
+    },
+    items: [
+      {
+        id: '5',
+        src: Product5,
+        title: 'Cozy Bed',
+        price: 299.99,
+        category: 'beds',
+        tags: ['cozy', 'bedroom'],
+        inStock: true,
+        rating: 4.7,
+        reviewCount: 67,
+        features: ['Storage drawers', 'Headboard'],
+        materials: ['Wood', 'Fabric'],
+        quantity: 1
+      }
+    ],
+    total: 299.99,
+    status: 'pending',
+    paymentMethod: 'cod',
+    paymentStatus: 'pending',
+    createdAt: '2024-01-16T08:15:00Z',
+    updatedAt: '2024-01-16T08:15:00Z'
+  }
+]
+
+// Admin Users
+export const adminUsers: AdminUser[] = [
+  {
+    id: '1',
+    username: 'admin',
+    password: 'admin123', // Simple password for demo
+    name: 'System Administrator',
+    role: 'admin'
+  },
+  {
+    id: '2',
+    username: 'manager',
+    password: 'manager123',
+    name: 'Store Manager',
+    role: 'manager'
+  }
+]
+
+// Analytics Data
+// Add to existing analytics object
+export const analytics = {
+  totalSales: orders.reduce((sum, order) => sum + order.total, 0),
+  totalOrders: orders.length,
+  pendingOrders: orders.filter(order => order.status === 'pending').length,
+  deliveredOrders: orders.filter(order => order.status === 'delivered').length,
+  monthlySales: [
+    { month: 'Jan', sales: 12500 },
+    { month: 'Feb', sales: 18900 },
+    { month: 'Mar', sales: 15600 },
+    { month: 'Apr', sales: 23400 },
+    { month: 'May', sales: 19800 },
+    { month: 'Jun', sales: 28700 }
+  ],
+  popularProducts: products.slice(0, 5).map(product => ({
+    name: product.title,
+    sales: Math.floor(Math.random() * 100) + 20
+  })),
+  customerStats: {
+    totalCustomers: 156,
+    newCustomers: 24,
+    returningCustomers: 89
+  },
+  revenueByCategory: [
+    { category: 'chairs', revenue: 12450 },
+    { category: 'sofas', revenue: 8920 },
+    { category: 'tables', revenue: 6780 },
+    { category: 'beds', revenue: 4230 },
+    { category: 'lighting', revenue: 3150 },
+    { category: 'decor', revenue: 2870 }
+  ]
+}
+
+// Helper functions
+export const getOrderById = (id: string) => {
+  return orders.find(order => order.id === id)
+}
+
+export const getOrdersByStatus = (status: Order['status']) => {
+  return orders.filter(order => order.status === status)
+}
+
+export const updateOrderStatus = (orderId: string, status: Order['status']) => {
+  const order = orders.find(order => order.id === orderId)
+  if (order) {
+    order.status = status
+    order.updatedAt = new Date().toISOString()
+  }
+  return order
+}
+
+export const verifyAdminLogin = (username: string, password: string) => {
+  return adminUsers.find(user => 
+    user.username === username && user.password === password
+  )
 }
