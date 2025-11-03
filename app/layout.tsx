@@ -82,7 +82,7 @@ export const metadata: Metadata = {
   },
   verification: {
     // Add your verification codes here after creating accounts
-    google: 'your-google-verification-code',
+    google: 'google8a122e0b0ebd53f3.html',
     // yandex: 'your-yandex-verification-code',
     // bing: 'your-bing-verification-code',
   },
