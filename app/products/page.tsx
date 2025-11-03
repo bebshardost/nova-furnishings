@@ -1,4 +1,4 @@
-import ProductListing from '@/components/ProductListing'
+import ProductListing from '@/components/product/ProductListing'
 import { Suspense } from 'react'
 
 export const metadata = {

@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import ProductDetails from '@/components/ProductDetails'
+import ProductDetails from '@/components/product/ProductDetails'
 import { getProductById } from '@/lib/mock-data'
 
 interface ProductPageProps {
