@@ -133,7 +133,7 @@ export const useCartStore = create<CartStore>()(
       migrate: (persistedState: unknown, version: number) => {
         try {
           // If no version, assume it's version 0
-          let currentVersion = version === undefined ? 0 : version
+          const currentVersion = version === undefined ? 0 : version
           
           let state = persistedState as Partial<PersistedCartState>
           
